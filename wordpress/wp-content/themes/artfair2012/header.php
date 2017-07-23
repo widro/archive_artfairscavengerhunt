@@ -44,6 +44,15 @@
 	<div style="float:left;">
 	</div>
 	<div style="float:right;">
+
+<?php
+if (is_user_logged_in()){
+    echo "Welcome, registered user!";
+}
+else{
+    echo "Not Logged In!";
+}
+?>
 		<a href="/login">login</a>
 		<a href="/register">register</a>
 		<a href="#" onclick="javascript:alert('logout here, will show if logged in');">logout</a>

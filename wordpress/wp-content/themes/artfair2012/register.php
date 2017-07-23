@@ -50,10 +50,6 @@ echo "form submitted!<br><br>";
 
 ?>
 
-
-<form method="post">
-<h3>Register!</h3>
-
 <?php
 if($errors){
 	echo "<h3 style=\"color:#ff0000\">";
@@ -62,23 +58,9 @@ if($errors){
 }
 ?>
 
-
-username:<br>
-<input type="text" name="username" id="username">
-<br><br>
-
-password:<br>
-<input type="text" name="password" id="password">
-<br><br>
-
-email:<br>
-<input type="text" name="email" id="email">
-<br><br>
+<form method="post">
+<h3>Register!</h3>
 
 
-<input type="submit" name="submitbtn" id="submitbtn" value="Register">
-
+<?php include('registerform.php'); ?>
 </form>
-
-
-
