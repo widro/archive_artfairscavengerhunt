@@ -4,6 +4,8 @@
 		<a href="/">home</a>
 		<a href="/about">about</a>
 		<a href="/contact">contact</a>
+		<br><br>
+		Conducted by Tall Blank & Handsome
 	</div>
 	<div style="float:right;font-size:10px;text-align:right;">
 		<a href="http://digitalgrout.com" target="_blank"><img height="50" border="0" src="/wordpress/wp-content/themes/artfair2012/images/digitalgrouticon.png" align="right"></a>Designed and hosted by<br><a style="font-size:10px;" href="http://digitalgrout.com" target="_blank">Digital Grout</a>
@@ -35,6 +37,34 @@
 </script>
 
 
+
+<!-- Mask to cover the whole screen -->
+<div id="mask"></div>
+
+<!-- boxes -->
+<div id="boxes">
+
+	<div id="loginform" class="window">
+
+
+		<iframe class="loginframe" src="http://artfairscavengerhunt.com/login/"></iframe>
+
+	<input type="button" value="Close it" class="close"/>
+	</div>
+
+	<div id="registerform" class="window">
+
+		<iframe class="loginframe" src="http://artfairscavengerhunt.com/register/"></iframe>
+
+	<input type="button" value="Close it" class="close"/>
+	</div>
+
+	<div id="dialog2" class="window">
+	  So, with this <b>Simple Jquery Modal Window</b>, it can be in any shapes you want! Simple and Easy to modify : ) <br/><br/>
+	<input type="button" value="Close it" class="close"/>
+	</div>
+</div>
+<!-- boxes -->
 
 </body>
 </html>

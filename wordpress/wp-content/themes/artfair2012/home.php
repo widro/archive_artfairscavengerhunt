@@ -51,19 +51,22 @@
 <?php
 $categories=get_categories('hide_empty=0');
 foreach ($categories as $category) {
-	$slug = $category->category_nicename;
-	$name = $category->cat_name;
-	$count = $category->category_count;
-	$description = $category->description;
 
-	echo "
-	<div class=\"home_grid\" onclick=\"javascript:window.location='/category/$slug'\">
-		<h3>$name</h3>
-		$description ($count)
-	</div>
 
-	";
+	if(($category->category_nicename!="uncategorized")&&($category->category_nicename!="people")){
+		$slug = $category->category_nicename;
+		$name = $category->cat_name;
+		$count = $category->category_count;
+		$description = $category->description;
 
+		echo "
+		<div class=\"home_grid\" onclick=\"javascript:window.location='/category/$slug'\">
+			<h3>$name</h3>
+			$description ($count)
+		</div>
+
+		";
+	}
 }
 ?>
 

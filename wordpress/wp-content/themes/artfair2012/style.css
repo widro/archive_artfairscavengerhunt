@@ -6,6 +6,81 @@ Author: Digital Grout www.digitalgrout.com
 Version: 1.0
 */
 
+
+
+/*** modal **/
+
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  display:none;
+  z-index:9999;
+}
+
+#boxes #dialog {
+  width:375px; 
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+
+#boxes #dialog1 {
+  width:375px; 
+  height:203px;
+}
+
+#dialog1 .d-header {
+  background:url(images/login-header.png) no-repeat 0 0 transparent; 
+  width:375px; 
+  height:150px;
+}
+
+#dialog1 .d-header input {
+  position:relative;
+  top:60px;
+  left:100px;
+  border:3px solid #cccccc;
+  height:22px;
+  width:200px;
+  font-size:15px;
+  padding:5px;
+  margin-top:4px;
+}
+
+#dialog1 .d-blank {
+  float:left;
+  background:url(images/login-blank.png) no-repeat 0 0 transparent; 
+  width:267px; 
+  height:53px;
+}
+
+#dialog1 .d-login {
+  float:left;
+  width:108px; 
+  height:53px;
+}
+
+#boxes #dialog2 {
+  background:url(images/notice.png) no-repeat 0 0 transparent; 
+  width:326px; 
+  height:229px;
+  padding:50px 0 20px 25px;
+}
+
+
+
+
+
 body{
 	font-family:verdana;
 	background:#cccccc;
@@ -211,8 +286,7 @@ div.listing_grid{
 	width:200px; 
 	border:1px #eeeeee solid; 
 	padding:5px;
-	min-height:100px;
-	height:auto; 
+	height:150px;
 	float:left;
 	text-align:center;
 	cursor:pointer;
@@ -235,21 +309,24 @@ div.listing_grid a:hover{
 
 
 
-div.home_grid h3{
-	color:#333333; 
-	font-weight:bold; 
-	text-decoration:none;
-}
-
-
 
 
 iframe.uploadframe{
 	width:600px;
 	margin-left:180px;
 	margin-bottom:5px;
-	height:100px;
+	height:200px;
 	border:1px solid #ff0000;
+
+}
+
+
+
+iframe.loginframe{
+	width:400px;
+	height:200px;
+	border:1px solid #ff0000;
+	background:#ffffff;
 
 }
 
@@ -259,19 +336,19 @@ iframe.uploadframe{
 
 
 div.checklist_grid{
-	width:100px; 
+	width:200px; 
 	border:1px #eeeeee solid; 
 	padding:5px;
-	min-height:100px;
-	height:auto; 
+	height:40px;
 	float:left;
 	text-align:center;
 	cursor:pointer;
+	font-size:13px;
+	font-weight:bold;
 }
 
 div.checklist_grid:hover{
 	background:#eeeeee; 
-	border:1px #666666 solid; 
 }
 
 div.checklist_grid a{
@@ -286,13 +363,11 @@ div.checklist_grid a:hover{
 
 
 div.yes{
-	color:#00ff00;
-
+	border: 2px solid #00ff00;
 }
 
 div.no{
-	color:#ff0000;
-
+	border: 2px solid #ff0000;
 }
 
 
@@ -303,11 +378,12 @@ div.home_grid{
 	width:200px; 
 	border:1px #eeeeee solid; 
 	padding:5px;
-	min-height:100px;
+	min-height:120px;
 	height:auto; 
 	float:left;
 	text-align:center;
 	cursor:pointer;
+	font-size:14px;
 }
 
 div.home_grid:hover{
@@ -325,6 +401,14 @@ div.home_grid a:hover{
 	color:#666666; 
 }
 
+
+
+div.home_grid h3{
+	color:#333333; 
+	font-weight:bold; 
+	text-decoration:none;
+	font-size:16px;
+}
 
 
 

@@ -3,12 +3,7 @@
 Template Name: Login
 */
 
-
-
 if($_POST['submitbtn']){
-
-echo "form submitted!<br><br>";
-
 
 	if($_POST['username']){
 		$user_login = $_POST['username'];
@@ -25,19 +20,29 @@ echo "form submitted!<br><br>";
 		$errors .= "no password specified<br>";
 	}
 
-
-
 	if(!$errors){
+		$creds = array();
+		$creds['user_login'] = $user_login;
+		$creds['user_password'] = $user_pass;
+		$creds['remember'] = true;
+		$user = wp_signon( $creds, false );
+		if ( is_wp_error($user) ){
+		   $errors .= $user->get_error_message();
+		   echo $errors;
+		}
+		else{
+			//header( 'Location: http://artfairscavengerhunt.com/' ) ;
+			echo "
+			<script>
+				parent.window.location='http://artfairscavengerhunt.com/';
+			</script>
 
+			";
+		}
 	}
 
 }
-
-
-
 ?>
-
-
 <form method="post">
 <h3>Login!</h3>
 
@@ -50,13 +55,13 @@ if($errors){
 ?>
 
 
-username:<br>
+username:
 <input type="text" name="username" id="username">
-<br><br>
+<br>
 
-password:<br>
-<input type="text" name="password" id="password">
-<br><br>
+password:
+<input type="password" name="password" id="password">
+<br>
 
 <input type="submit" name="submitbtn" id="submitbtn" value="Login">
 

@@ -1,16 +1,12 @@
-username:<br>
+username:
 <input type="text" name="username" id="username">
-<br><br>
-
-password:<br>
+<br>
+password:
 <input type="text" name="password" id="password">
-<br><br>
-
-email:<br>
+<br>
+email:
 <input type="text" name="email" id="email">
-<br><br>
-
-
+<br>
 <input type="submit" name="submitbtn" id="submitbtn" value="Register">
 
 

@@ -3,12 +3,7 @@
 Template Name: Register
 */
 
-
-
 if($_POST['submitbtn']){
-
-echo "form submitted!<br><br>";
-
 
 	if($_POST['username']){
 		$user_login = $_POST['username'];
@@ -35,13 +30,38 @@ echo "form submitted!<br><br>";
 
 	if(!$errors){
 
+
 		$dinkers = do_action('register_post', $user_login, $formemail, $errors);
 
 		//$user_pass = wp_generate_password();
 		$newuserid = wp_create_user( $user_login, $user_pass, $formemail );
 		wp_new_user_notification($newuserid, $user_pass);
 		$user_ID = $newuserid;
-		echo $user_ID;
+
+		if($_POST['postidchange']){
+			$updateid = $_POST['postidchange'];
+
+			$sql_update = "UPDATE wp_posts SET post_author = '".$user_ID."' WHERE  ID = '". $updateid . "'";
+
+			$result_update = mysql_query($sql_update) or die($sql_update);
+
+		}
+
+
+		$creds = array();
+		$creds['user_login'] = $user_login;
+		$creds['user_password'] = $user_pass;
+		$creds['remember'] = true;
+		$user = wp_signon( $creds, false );
+
+
+		echo "
+		<script>
+			parent.window.location='http://artfairscavengerhunt.com/';
+		</script>
+
+		";
+
 	}
 
 }
