@@ -1,0 +1,428 @@
+/*
+Theme Name: Art Fair Scavenger Hunt
+Theme URI: http://artfairscavengerhunt.com/
+Description: Art Fair Scavenger Hunt theme.
+Author: Digital Grout www.digitalgrout.com
+Version: 1.0
+*/
+
+body{
+	font-family:verdana;
+	background:#cccccc;
+	text-align:center;
+	margin:0;
+}
+
+.container_basic{
+	width:960px;
+	text-align:left;
+	position:relative;
+	margin:0 auto;
+	border:1px solid #000000;
+	margin-top:10px;
+	background:#ffffff;
+	padding:20px;
+
+
+}
+
+.title_basic{
+	font-family:verdana;
+	font-weight:bold;
+	font-size:24px;
+	color:#666666
+	width:860px;
+	margin-bottom:10px;
+}
+
+.title_basic a{
+	text-decoration:none;
+	color:#000000;
+}
+
+.nav_links{
+	font-family:verdana;
+	font-weight:bold;
+	font-size:13px;
+	color:#666666;
+	width:860px;
+	margin-bottom:20px;
+}
+
+.nav_links a{
+	font-size:13px;
+	color:#999999;
+	text-decoration:none;
+	margin-right:10px;
+}
+
+.nav_links a:hover{
+	font-size:13px;
+	color:#777777;
+	text-decoration:none;
+}
+
+.nav_links a:active{
+	font-size:13px;
+	color:#990000;
+	text-decoration:none;
+}
+
+
+
+.header_basic{
+	font-family:verdana;
+	font-weight:bold;
+	font-size:13px;
+	color:#666666;
+	border-bottom:1px solid #eeeeee;
+	width:760px;
+	margin-bottom:5px;
+
+}
+
+.text_basic{
+	font-family:verdana;
+	font-size:10px;
+	color:#666666;
+	width:760px;
+	margin-left:20px;
+	margin-bottom:20px;
+	text-align:left;
+
+
+}
+
+.thumbnail_image{
+	width:100px;
+	height:100px;
+	margin:5px;
+	padding:5px;
+	border: 1px #999999 solid;
+
+
+}
+
+.full_image{
+	margin:5px;
+	padding:5px;
+	border: 1px #999999 solid;
+
+
+}
+
+
+.home_grid_container{
+	margin-top:50px; 
+	clear:both; 
+	padding-left:50px;
+	padding-right:50px;  
+	width:850px;
+	height:500px;
+	background: url('images/twidro_signature.jpg') top center no-repeat #ffffff;
+}
+
+.page_grid_container{
+	margin-top:50px; 
+	clear:both; 
+	padding-left:50px;
+	padding-right:50px;  
+	width:850px;
+	overflow:display;
+	background: #ffffff;
+}
+
+
+div.page_grid_project{
+	background:#cccccc; 
+	border: 1px #999999 solid; 
+	padding: 5px; 
+	color:#666666; 
+	font-weight:bold; 
+	font-size:20px;
+	width:800px;
+
+}
+
+
+div.page_grid_header{
+	margin-left:20px; 
+	margin-bottom:10px; 
+	padding:10px;
+	color:#666666; 
+	font-weight:bold; 
+	font-size:16px;
+	width:600px;
+	border-bottom: 1px #cccccc solid;
+
+}
+
+
+div.page_grid_body{
+	margin-left:30px; 
+	padding:10px;
+	color:#888888; 
+	font-size:13px;
+	width:650px;
+	clear:both;
+	border-bottom: 6px #dddddd solid;
+
+}
+
+
+
+
+
+
+
+.gallery {
+	background-color: #cccccc;
+	padding: 5px;
+	width: 520px;
+	clear:both;
+}
+.gallery ul { list-style: none; }
+.gallery ul li { display: inline; }
+.gallery ul img {
+	border: 5px solid #666666;
+	border-width: 5px 5px 5px;
+}
+.gallery ul a:hover img {
+	border: 5px solid #fff;
+	border-width: 5px 5px 5px;
+	color: #fff;
+}
+.gallery ul a:hover { color: #fff; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.listing_grid{
+	width:200px; 
+	border:1px #eeeeee solid; 
+	padding:5px;
+	min-height:100px;
+	height:auto; 
+	float:left;
+	text-align:center;
+	cursor:pointer;
+}
+
+div.listing_grid:hover{
+	background:#eeeeee; 
+	border:1px #666666 solid; 
+}
+
+div.listing_grid a{
+	color:#333333; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+
+div.listing_grid a:hover{
+	color:#666666; 
+}
+
+
+
+div.home_grid h3{
+	color:#333333; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+
+
+
+
+iframe.uploadframe{
+	width:600px;
+	margin-left:180px;
+	margin-bottom:5px;
+	height:100px;
+	border:1px solid #ff0000;
+
+}
+
+
+
+
+
+
+div.checklist_grid{
+	width:100px; 
+	border:1px #eeeeee solid; 
+	padding:5px;
+	min-height:100px;
+	height:auto; 
+	float:left;
+	text-align:center;
+	cursor:pointer;
+}
+
+div.checklist_grid:hover{
+	background:#eeeeee; 
+	border:1px #666666 solid; 
+}
+
+div.checklist_grid a{
+	color:#333333; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+
+div.checklist_grid a:hover{
+	color:#666666; 
+}
+
+
+div.yes{
+	color:#00ff00;
+
+}
+
+div.no{
+	color:#ff0000;
+
+}
+
+
+
+
+
+div.home_grid{
+	width:200px; 
+	border:1px #eeeeee solid; 
+	padding:5px;
+	min-height:100px;
+	height:auto; 
+	float:left;
+	text-align:center;
+	cursor:pointer;
+}
+
+div.home_grid:hover{
+	background:#eeeeee; 
+	border:1px #666666 solid; 
+}
+
+div.home_grid a{
+	color:#333333; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+
+div.home_grid a:hover{
+	color:#666666; 
+}
+
+
+
+
+
+
+
+.footer_row{
+	width:950px;
+	height:50px; 
+	background: #333333;
+}
+
+.footer_row_cell{
+	width:150px;
+	color:#ffffff; 
+	font-weight:bold; 
+	float:left;
+}
+
+div.footer_row a{
+	color:#ffffff; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+
+
+
+
+/****** top nav ******/
+
+
+
+#sddm{	margin: 0;
+	padding: 0;
+	float:right;
+}
+
+#sddm li{
+	text-transform: uppercase;
+	text-align:right;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	font: bold 13px arial;
+	padding-top:5px;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+#sddm li a{	
+	display: block;
+	margin: 0 1px 0 0;
+	padding: 3px 6px;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #666666;
+}
+
+#sddm li a.currentzone{
+	background: #cccccc;
+	border: 1px solid #ffffff;
+}
+
+#sddm li a:hover{
+	background: #999999;
+	border: 1px solid #ffffff;
+}
+
+#sddm div{
+	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #EAEBD8;
+	border: 1px solid #333333;
+	z-index: 1000;
+}
+
+#sddm div a{
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 5px 10px;
+	width: auto;
+	white-space: nowrap;
+	text-align: left;
+	text-decoration: none;
+	background: #000000;
+	color: #ffffff;
+	font: 11px arial;
+}
+
+#sddm div a:hover{	
+	background: #cccccc;
+	color: #ffffff
+}
+
+
+
