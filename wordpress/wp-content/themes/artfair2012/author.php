@@ -15,15 +15,41 @@ $insider_description = $curauth->description;
 ?>
 
 
+<div class="page_grid_container">
+	<div class="page_grid_header">
+		<?php echo $insider_display_name ?>'s Scavenger Hunt
+	</div>
+	<div class="page_grid_body">
+
+
+
+<?php
+$categories=get_categories('hide_empty=0');
+foreach ($categories as $category) {
+	$slug = $category->category_nicename;
+	$name = $category->cat_name;
+	$count = $category->category_count;
+	$description = $category->description;
+
+	echo "<li>$name</li>
+	";
+
+}
+?>
+
+
+
+
+	</div>
+</div>
+
+
 
 
 <?php if (have_posts()) : ?>
 <?php
 
 	$postarray = array();
-	$yesitems = array();
-	$yesitems[] = "dinkers";;
-	$noitems = array();
 while (have_posts()) : the_post();
 
 	$thistitle = $post->post_title;
@@ -44,26 +70,18 @@ while (have_posts()) : the_post();
 	//converts pipe exploded array into unix ts
 	$unixtimestamp =  mktime((int)$thisdatearr[0], (int)$thisdatearr[1], (int)$thisdatearr[2], (int)$thisdatearr[3], (int)$thisdatearr[4], (int)$thisdatearr[5]);
 
-	foreach((get_the_category()) as $category) {
-		$categoryslug = $category->slug;
-		$categoryname = $category->cat_name;
-		$yesitems[] = $categoryslug;
-	}
-
-
 	$postarray[$unixtimestamp]['title'] = $thistitle;
 	$postarray[$unixtimestamp]['clickthru'] = $clickthru;
 	$postarray[$unixtimestamp]['excerpt'] = $thisexcerpt;
 	$postarray[$unixtimestamp]['content'] = $thiscontent;
 	$postarray[$unixtimestamp]['post_date'] = $post->post_date;
-	$postarray[$unixtimestamp]['categoryslug'] = $categoryslug;
-	$postarray[$unixtimestamp]['categoryname'] = $categoryname;
+	$postarray[$unixtimestamp]['topstory500x250'] = $topstory500x250;
+	$postarray[$unixtimestamp]['topstory120x120'] = $topstory120x120;
 endwhile;
 endif; ?>
 
 
 <?php
-if(is_array($postarray)){
 foreach($postarray as $key => $outsidepost){
 	//echo $key . "<br>";
 
@@ -78,75 +96,43 @@ foreach($postarray as $key => $outsidepost){
 
 	$clickthru = $outsidepost['clickthru'];
 
-
-	$image = trim(strip_tags($outsidepost['content']));
-	$image_thumb = str_replace(".jpg", "-150x150.jpg", $image);
-	$image_thumb_rel = str_replace("http://artfairscavengerhunt.com", "-150x150.jpg", $image);
-	$filename = "/nfs/c03/h03/mnt/54729/domains/artfairscavengerhunt.com/html" . $image_thumb_rel;
-	if (!file_exists($filename)) {
-		$image_thumb = $image;
+	if($currentpost%3==1){
+		$authorcellcolor = "";
+	}
+	elseif($currentpost%3==2){
+		$authorcellcolor = "fafafa";
+	}
+	elseif($currentpost%3==0){
+		$authorcellcolor = "eeeeee";
 	}
 
-	$categoryname = $outsidepost['categoryname'];
-	$categoryslug = $outsidepost['categoryslug'];
+$image = trim(strip_tags($outsidepost['content']));
 
 	$authorlisting .= "
 	<div class=\"listing_grid\">
-		<a href=\"$clickthru\"><img src=\"$image_thumb\" width=150></a>
-		<br>$categoryname
+		<a href=\"$clickthru\"><img src=\"$image\" width=150></a>
 
 
 	</div>
 	";
-}
-}
-?>
-
-<?php
-$categories=get_categories('hide_empty=0');
-foreach ($categories as $category) {
-	if(($category->category_nicename!="uncategorized")&&($category->category_nicename!="people")){
-		$slug = $category->category_nicename;
-		$name = $category->cat_name;
-		$count = $category->category_count;
-		$description = $category->description;
 
 
-		if((!is_null($yesitems))&&(in_array($slug, $yesitems))){
-			$checklistgrid .= "<div class=\"checklist_grid yes\">&#10004;$name</div>";
-		}
-		else{
-			$checklistgrid .= "<div class=\"checklist_grid no\">&#10008;$name</div>";
-			$noitems[] = $slug;
-		}
+	if($currentpost%2==0){
+		$authorlisting_left .= $authorlisting;
 	}
 
+	else{
+		$authorlisting_right .= $authorlisting;
+	}
+
+	$currentpost++;
+
 
 }
+
+echo $authorlisting;
+
 ?>
-
-
-<div class="page_grid_container">
-	<div class="page_grid_header">
-		<?php echo $insider_display_name ?>'s Scavenger Hunt
-	</div>
-</div>
-<?php echo $checklistgrid; ?>
-
-<div class="page_grid_container">
-	<div class="page_grid_header">
-		<?php echo $insider_display_name ?>'s Gallery
-	</div>
-</div>
-
-<?php echo $authorlisting; ?>
-
-
-
-
-
-
-
 
 
 <?php include('footer.php'); ?>
